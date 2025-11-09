@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LoadingScreen from "@/components/ui/loading-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#060b1c]">
+      <body className="bg-slate-950 overflow-x-hidden">
+        <LoadingScreen />
         {children}
       </body>
     </html>

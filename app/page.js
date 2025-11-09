@@ -1,8 +1,10 @@
 import About from "@/_components/About";
+import Contact from "@/_components/Contact";
 import Header from "@/_components/Header";
 import Hero from "@/_components/Hero";
 import Projects from "@/_components/Projects";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -11,9 +13,26 @@ export default function Home() {
      <Header/>
     </div>
     <div className="relative">
-         <Hero/>
-         <About/>
-         <Projects/>
+         <div
+           
+         >
+           <Hero/>
+         </div>
+         <div
+         
+         >
+           <About/>
+         </div>
+         <div
+         
+         >
+           <Projects/>
+         </div>
+         <div
+        
+         >
+           <Contact/>
+         </div>
 </div>
     </>
   );

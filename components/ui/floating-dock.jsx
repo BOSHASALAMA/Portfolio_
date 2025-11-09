@@ -49,8 +49,11 @@ const FloatingDockMobile = ({
                 <a
                   href={item.href}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 dark:bg-neutral-900">
+                  onClick={item.onClick}
+                  target={item.target || "_self"}
+                  className="flex items-center justify-start rounded-full bg-neutral-900 dark:bg-neutral-900 px-4 py-2 gap-2 min-w-[120px]">
                   <div className="h-4 w-4">{item.icon}</div>
+                  <span className="text-sm text-cyan-400 dark:text-cyan-300">{item.title}</span>
                 </a>
               </motion.div>
             ))}
@@ -59,8 +62,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 dark:bg-neutral-800">
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        className="flex h-10 w-10 items-center justify-center rounded-md shadow shadow-cyan-700 bg-neutral-900 dark:bg-neutral-800">
+        <IconLayoutNavbarCollapse className="h-5 w-5 text-cyan-400 dark:text-cyan-300" />
+        
       </button>
     </div>
   );
@@ -90,7 +94,9 @@ function IconContainer({
   mouseX,
   title,
   icon,
-  href
+  href,
+  onClick,
+  target
 }) {
   let ref = useRef(null);
 
@@ -131,12 +137,13 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <a href={href} onClick={onClick} target={target || "_self"}>
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+
         className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800">
         <AnimatePresence>
           {hovered && (

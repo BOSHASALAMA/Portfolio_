@@ -1,77 +1,91 @@
+'use client'
 import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandLinkedinFilled,
   IconBrandX,
   IconExchange,
   IconHome,
+  IconMessage,
   IconNewSection,
   IconTerminal2,
 } from "@tabler/icons-react";
 const Header = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
      const links = [
     {
       title: "Home",
       icon: (
         <IconHome className="h-full w-full text-cyan-400 dark:text-cyan-300" />
       ),
-      href: "/",
+      href: "#",
+      onClick: (e) => { e.preventDefault(); scrollToSection('hero'); },
+
     },
 
     {
-      title: "Products",
+      title: "About",
       icon: (
         <IconTerminal2 className="h-full w-full text-cyan-400 dark:text-cyan-300" />
       ),
-      href: "/products",
+      href: "#",
+      onClick: (e) => { e.preventDefault(); scrollToSection('about'); },
     },
     {
-      title: "Components",
+      title: "Projects",
       icon: (
         <IconNewSection className="h-full w-full text-cyan-400 dark:text-cyan-300" />
       ),
-      href: "/components",
+      href: "#",
+      onClick: (e) => { e.preventDefault(); scrollToSection('projects'); },
     },
     {
-      title: "Aceternity UI",
+      title: "Contact",
       icon: (
-        <img
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
+       <IconMessage className="h-full w-full text-cyan-400 dark:text-cyan-300"/>
       ),
-      href: "https://ui.aceternity.com",
+      href: "#",
+      onClick: (e) => { e.preventDefault(); scrollToSection('contact'); },
+
     },
     {
-      title: "Changelog",
+      title: "LinkedIn",
       icon: (
-        <IconExchange className="h-full w-full text-cyan-400 dark:text-cyan-300" />
+        <IconBrandLinkedinFilled className="h-full w-full text-cyan-400 dark:text-cyan-300" />
       ),
-      href: "/changelog",
+      href: "https://www.linkedin.com/in/beshoi-salama-943392208/",
+      target: "_blank",
+
     },
 
     {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-cyan-400 dark:text-cyan-300" />
-      ),
-      href: "https://twitter.com/aceternity",
-    },
-    {
-      title: "GitHub",
+      title: "Github",
       icon: (
         <IconBrandGithub className="h-full w-full text-cyan-400 dark:text-cyan-300" />
       ),
-      href: "https://github.com/aceternity",
+      href: "https://github.com/BOSHASALAMA",
+      target: "_blank",
+
     },
+   
   ];
   return (
-  <div className="fixed w-full flex justify-start z-50 mt-8 pl-4 pt-8">
+  <div className="fixed w-full flex justify-start z-50 mt-4 pl-4 md:pt-12">
       <FloatingDock
-        mobileClassName="translate-y-8" // only for demo, remove for production
+       initial={{opacity:0,y:50}}
+      whileInView={{opacity:1,y:0}}
+      transition={{duration:.8}}
+        mobileClassName="translate-y-4" // only for demo, remove for production
         items={links}
+        
       />
     </div>
   )

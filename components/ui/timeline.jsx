@@ -28,13 +28,21 @@ export const Timeline = ({
     <div
       className="w-full bg-slate-950 font-sans md:px-10"
       ref={containerRef}>
-        <h1 className="text-4xl md:text-6xl font-bold text-start bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-500">About me</h1>
-      <div className="max-w-7xl px-4 md:px-8 lg:px-3">
+        <motion.h1 
+      initial={{opacity:0,y:50}}
+      whileInView={{opacity:1,y:0}}
+      transition={{duration:.8}}
+        className="text-4xl md:text-6xl font-bold text-start bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-500">About me</motion.h1>
+      <motion.div 
+      initial={{opacity:0,x:-60}}
+      whileInView={{opacity:1,x:0}}
+      transition={{duration:.8}}
+      className="max-w-7xl px-4 md:px-8 lg:px-3">
         <h2 className="text-sm md:text-xl  mb-4 text-gray-500 py-5 max-w-4xl">
 I’m a Front-End Developer focused on building modern, responsive,<br/> and high-performance web applications.
 <br/>My main stack includes React, Next.js, TypeScript, and Tailwind CSS, and I enjoy creating clean UIs with efficient, reusable components.        </h2>
    
-      </div>
+      </motion.div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div key={index} className="flex justify-start pt-10 md:pt-40 md:gap-10">
@@ -46,14 +54,14 @@ I’m a Front-End Developer focused on building modern, responsive,<br/> and hig
                   className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <h3
-                className={`hidden md:block text-xl md:pl-20 md:text-5xl font-bold ${item.title === "Get to know me!" ? "text-white" : "text-neutral-500 dark:text-neutral-500"}`}>
+                className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3
-                className={`md:hidden block text-2xl mb-4 text-left font-bold ${item.title === "Get to know me!" ? "text-white" : "text-neutral-500 dark:text-neutral-500"}`}>
+                className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
               {item.content}{" "}
