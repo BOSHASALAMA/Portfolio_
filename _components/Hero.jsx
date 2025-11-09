@@ -26,7 +26,7 @@ const Hero = () => {
           <Button className="px-8 py-4 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-semibold rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105 cursor-pointer"  onClick= {() => scrollToSection('projects')}>
             View My Work
           </Button>
-          <Button className="px-8 py-4 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-semibold rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105 cursor-pointer" onClick={() => window.open('/Beshoi_salama.pdf', '_blank')}>
+          <Button className="px-8 py-4 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-semibold rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105 cursor-pointer" onClick={() => window.open('/Beshoi_Salama.pdf', '_blank')}>
             Download CV
           </Button>
         </div>

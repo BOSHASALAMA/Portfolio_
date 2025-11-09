@@ -35,7 +35,7 @@ I'm a passionate developer who thrives on creating accessible, pixel-perfect use
               <a key="instagram" href="https://instagram.com/beshoi_salama" target="_blank" rel="noopener noreferrer" className="p-2 md:p-3 bg-linear-to-br from-slate-800 to-slate-900 hover:bg-cyan-400 text-cyan-300 hover:text-slate-900 rounded-full border border-cyan-500/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
                 <IconBrandInstagram className="w-5 h-5 md:w-6 md:h-6" />
               </a>
-              <a key="whatsapp" href="https://wa.me/01225587869" target="_blank" rel="noopener noreferrer" className="p-2 md:p-3 bg-linear-to-br from-slate-800 to-slate-900 hover:bg-cyan-400 text-cyan-300 hover:text-slate-900 rounded-full border border-cyan-500/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
+              <a key="whatsapp" href="https://wa.me/+201225587869" target="_blank" rel="noopener noreferrer" className="p-2 md:p-3 bg-linear-to-br from-slate-800 to-slate-900 hover:bg-cyan-400 text-cyan-300 hover:text-slate-900 rounded-full border border-cyan-500/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
                 <IconBrandWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
               </a>
             </motion.div>
