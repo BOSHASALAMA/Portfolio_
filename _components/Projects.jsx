@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "motion/react";
 
 import { PinContainer } from "@/components/ui/3d-pin";
-const Projects = () => {
+const Projects =React.memo(() => {
   return (
        <div id="projects" className="min-h-screen w-full flex flex-col justify-center items-center bg-slate-950 px-4 py-32">
          <motion.h1 
@@ -166,6 +166,6 @@ A CRUD project that allows users to Create, Read, Update, and Delete data throug
        </div>
 
   )
-}
+})
 
 export default Projects

@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from "motion/react";
 
-const Contact = () => {
+const Contact = React.memo(() => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +19,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
@@ -45,7 +45,7 @@ const Contact = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [formData.name, formData.email, formData.message]);
 
   return (
     <div id="contact" className="min-h-screen w-full overflow-x-hidden py-32 px-4 md:px-8 lg:px-32 bg-slate-950">
@@ -143,6 +143,6 @@ const Contact = () => {
       </div>
     </div>
   );
-};
-
+}
+)
 export default Contact;

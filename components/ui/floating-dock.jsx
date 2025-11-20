@@ -62,9 +62,10 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
+        aria-label="Toggle navigation menu"
         className="flex h-10 w-10 items-center justify-center rounded-md shadow shadow-cyan-700 bg-neutral-900 dark:bg-neutral-800">
         <IconLayoutNavbarCollapse className="h-5 w-5 text-cyan-400 dark:text-cyan-300" />
-        
+
       </button>
     </div>
   );
@@ -137,7 +138,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href} onClick={onClick} target={target || "_self"}>
+    <a href={href} onClick={onClick} target={target || "_self"} aria-label={title}>
       <motion.div
         ref={ref}
         style={{ width, height }}

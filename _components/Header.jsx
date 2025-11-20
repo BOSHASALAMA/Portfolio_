@@ -1,24 +1,21 @@
 'use client'
-import React from "react";
+import React, { useCallback } from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandGithub,
-  IconBrandLinkedin,
   IconBrandLinkedinFilled,
-  IconBrandX,
-  IconExchange,
   IconHome,
   IconMessage,
   IconNewSection,
   IconTerminal2,
 } from "@tabler/icons-react";
-const Header = () => {
-  const scrollToSection = (sectionId) => {
+const Header = React.memo(() => {
+  const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
      const links = [
     {
@@ -90,5 +87,5 @@ const Header = () => {
     </div>
   )
 }
-
+)
 export default Header

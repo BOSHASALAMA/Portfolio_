@@ -1,15 +1,15 @@
 "use client";
-import React from "react";
+import React, { useCallback } from "react";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { Button } from "@/components/ui/moving-border";
 
-const Hero = () => {
-   const scrollToSection = (sectionId) => {
+const Hero = React.memo(() => {
+   const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
   return (
     <BackgroundGradientAnimation >
       <div id="hero" className="absolute z-10 inset-0 flex flex-col items-center justify-center text-white font-bold px-4 pt-32 pointer-events-none text-center">
@@ -33,6 +33,6 @@ const Hero = () => {
       </div>
     </BackgroundGradientAnimation>
   )
-}
+})
 
 export default Hero

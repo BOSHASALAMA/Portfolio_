@@ -28,11 +28,11 @@ export const Timeline = ({
     <div
       className="w-full bg-slate-950 font-sans md:px-10"
       ref={containerRef}>
-        <motion.h1 
+        <motion.h2
       initial={{opacity:0,y:50}}
       whileInView={{opacity:1,y:0}}
       transition={{duration:.8}}
-        className="text-4xl md:text-6xl font-bold text-start bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-500">About me</motion.h1>
+        className="text-4xl md:text-6xl font-bold text-start bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-500">About me</motion.h2>
       <motion.div 
       initial={{opacity:0,x:-60}}
       whileInView={{opacity:1,x:0}}

@@ -4,7 +4,7 @@ import { Timeline } from "@/components/ui/timeline";
 import { IconBrandLinkedin, IconBrandGithub, IconBrandFacebook, IconBrandInstagram, IconBrandWhatsapp } from '@tabler/icons-react';
 import {motion} from "motion/react"
 
-const About = () => {
+const About =React.memo(() => {
  const data = [
     {
       key: "get-to-know",
@@ -185,5 +185,5 @@ I'm a passionate developer who thrives on creating accessible, pixel-perfect use
 </div>
   )
 }
-
+)
 export default About
