@@ -17,7 +17,7 @@ const Projects =React.memo(() => {
         <PinContainer
         key="ecommerce"
         title="Demo"
-        href="https://e-commerce-virid-five.vercel.app/"
+        href="https://e-commerce-eta-ivory-32.vercel.app/"
         title2="Github"
         href2="https://github.com/BOSHASALAMA/E-commerce"
       >
