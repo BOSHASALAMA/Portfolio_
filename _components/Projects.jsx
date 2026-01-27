@@ -124,7 +124,7 @@ such as the number of confirmed cases, recoveries, and deaths.  </span>
        <PinContainer
         key="movie-app"
         title="Demo"
-        href="https://corona-inf.vercel.app/"
+        href="https://boshasalama.github.io/MovieProject/#/login"
         title2="Github"
         href2="https://github.com/BOSHASALAMA/MovieProject"
       >
